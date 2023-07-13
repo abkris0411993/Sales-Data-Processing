@@ -26,13 +26,13 @@ namespace Sales_Data_Processing.Services
 
             // Generate sales report after every 10th message
             messageCount++;
-            if (messageCount % 3 == 0)
+            if (messageCount % 10 == 0)
             {
                 _logGenerator.GetSalesReport();
             }
 
             // Pause the application and generate adjustment reports after 50 messages
-            if (messageCount == 4)
+            if (messageCount == 50)
             {
                 Console.WriteLine("\nPausing the application...");
                 _logGenerator.GetSalesAdjustmentsReport();
