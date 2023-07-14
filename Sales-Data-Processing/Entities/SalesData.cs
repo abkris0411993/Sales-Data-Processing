@@ -12,6 +12,7 @@ namespace Sales_Data_Processing
 
         public decimal Value { get; set; }
 
+        public int Occurrences { get; set; }
     }
 
 }

@@ -8,7 +8,7 @@ namespace Sales_Data_Processing.Services.Contracts
 {
     public interface ISalesDataService
     {
-        void SaleRecord(SalesData SalesData);
+        void AddSaleRecord(SalesData SalesData);
         List<SalesData> GetSales();
 
         

@@ -28,300 +28,282 @@ public class Program
             new MessageProcessing
             {
                 MessageType = 1,
-                SalesData = new SalesData { ProductType = "Apple", Value = 0.10m }
+                SalesData = new SalesData { ProductType = "Apple", Value = 1.20m }
             },
             new MessageProcessing
             {
                 MessageType = 1,
-                SalesData = new SalesData { ProductType = "Cheese", Value = 0.20m }
+                SalesData = new SalesData { ProductType = "Cheese", Value = 5.10m }
             },
             new MessageProcessing
             {
                 MessageType = 2,
-                SalesData = new SalesData { ProductType = "Orange", Value = 0.30m },
+                SalesData = new SalesData { ProductType = "Orange", Value = 3.20m },
+                Occurrences = 3
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,       
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Apple", Value = 1.00m, Operation=Operations.Add }
+            },
+            new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Banana", Value = 4.00m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 2,
+                SalesData = new SalesData { ProductType = "Orange", Value = 3.20m },
+                Occurrences = 2
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Orange", Value = 2.00m, Operation = Operations.Multiply }
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Cheese", Value = 2.00m, Operation = Operations.Subtract }
+            },
+             new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Apple", Value = 1.20m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Cheese", Value = 2.10m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 2,
+                SalesData = new SalesData { ProductType = "Orange", Value = 3.20m },
                 Occurrences = 3
             },
             new MessageProcessing
             {
                 MessageType = 3,
-                AdjustmentOperation = new AdjustmentOperation { ProductType = "Vegetables", Value = 0.05m, Operation=Operations.Subtract }
-            }
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Banana", Value = 0.30m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 2,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m },
-            //    Occurrences = 2
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 3,
-            //    AdjustmentOperation = new AdjustmentOperation { ProductType = "Apple", Value = 0.10m, Operation = Operations.Multiply }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Apple", Value = 0.10m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            // new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Apple", Value = 0.10m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 2,
-            //    SalesData = new SalesData { ProductType = "Apple", Value = 0.10m },
-            //    Occurrences = 3
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 3,
-            //    AdjustmentOperation = new AdjustmentOperation { ProductType = "Apple", Value = 0.05m, Operation=Operations.Add }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Banana", Value = 0.30m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 2,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m },
-            //    Occurrences = 2
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 3,
-            //    AdjustmentOperation = new AdjustmentOperation { ProductType = "Apple", Value = 0.10m, Operation = Operations.Multiply }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Apple", Value = 0.10m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            // new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Apple", Value = 0.10m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 2,
-            //    SalesData = new SalesData { ProductType = "Apple", Value = 0.10m },
-            //    Occurrences = 3
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 3,
-            //    AdjustmentOperation = new AdjustmentOperation { ProductType = "Apple", Value = 0.05m, Operation=Operations.Add }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Banana", Value = 0.30m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 2,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m },
-            //    Occurrences = 2
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 3,
-            //    AdjustmentOperation = new AdjustmentOperation { ProductType = "Apple", Value = 0.10m, Operation = Operations.Multiply }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Apple", Value = 0.10m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            // new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Apple", Value = 0.10m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 2,
-            //    SalesData = new SalesData { ProductType = "Apple", Value = 0.10m },
-            //    Occurrences = 3
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 3,
-            //    AdjustmentOperation = new AdjustmentOperation { ProductType = "Apple", Value = 0.05m, Operation=Operations.Add }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Banana", Value = 0.30m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 2,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m },
-            //    Occurrences = 2
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 3,
-            //    AdjustmentOperation = new AdjustmentOperation { ProductType = "Apple", Value = 0.10m, Operation = Operations.Multiply }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Apple", Value = 0.10m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            // new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Apple", Value = 0.10m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 2,
-            //    SalesData = new SalesData { ProductType = "Apple", Value = 0.10m },
-            //    Occurrences = 3
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 3,
-            //    AdjustmentOperation = new AdjustmentOperation { ProductType = "Apple", Value = 0.05m, Operation=Operations.Add }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Banana", Value = 0.30m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 2,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m },
-            //    Occurrences = 2
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 3,
-            //    AdjustmentOperation = new AdjustmentOperation { ProductType = "Apple", Value = 0.10m, Operation = Operations.Multiply }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Apple", Value = 0.10m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            //new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-            //},
-            // new MessageProcessing
-            //{
-            //    MessageType = 1,
-            //    SalesData = new SalesData { ProductType = "Apple", Value = 0.10m }
-            //},
-            //new MessageProcessing
-            //{
-            //    SalesData = new SalesData { ProductType = "Orange", Value = 0.20m }
-           
-            //    SalesData = new SalesData { ProductType = "Banana", Value = 0.30m }
-            //},
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Apple", Value = 1.00m, Operation=Operations.Add }
+            },
+            new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Banana", Value = 4.00m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 2,
+                SalesData = new SalesData { ProductType = "Orange", Value = 3.20m },
+                Occurrences = 2
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Orange", Value = 2.00m, Operation = Operations.Multiply }
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Cheese", Value = 2.00m, Operation = Operations.Add }
+            },
+            new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Apple", Value = 1.20m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Cheese", Value = 2.10m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 2,
+                SalesData = new SalesData { ProductType = "Orange", Value = 3.20m },
+                Occurrences = 3
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Apple", Value = 1.00m, Operation=Operations.Add }
+            },
+            new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Banana", Value = 4.00m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 2,
+                SalesData = new SalesData { ProductType = "Orange", Value = 3.20m },
+                Occurrences = 2
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Orange", Value = 2.00m, Operation = Operations.Multiply }
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Cheese", Value = 2.00m, Operation = Operations.Subtract }
+            },
+             new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Apple", Value = 1.00m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Cheese", Value = 2.00m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 2,
+                SalesData = new SalesData { ProductType = "Orange", Value = 3.00m },
+                Occurrences = 3
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Apple", Value = 1.00m, Operation=Operations.Add }
+            },
+            new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Banana", Value = 4.00m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 2,
+                SalesData = new SalesData { ProductType = "Orange", Value = 3.00m },
+                Occurrences = 2
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Orange", Value = 2.00m, Operation = Operations.Multiply }
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Cheese", Value = 2.00m, Operation = Operations.Add }
+            },
+            new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Apple", Value = 1.00m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Cheese", Value = 2.10m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 2,
+                SalesData = new SalesData { ProductType = "Orange", Value = 3.00m },
+                Occurrences = 3
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Apple", Value = 1.00m, Operation=Operations.Add }
+            },
+            new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Banana", Value = 4.00m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 2,
+                SalesData = new SalesData { ProductType = "Orange", Value = 3.00m },
+                Occurrences = 2
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Orange", Value = 2.00m, Operation = Operations.Add }
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Cheese", Value = 2.00m, Operation = Operations.Subtract }
+            },
+             new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Apple", Value = 1.00m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Cheese", Value = 2.00m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 2,
+                SalesData = new SalesData { ProductType = "Orange", Value = 3.00m },
+                Occurrences = 3
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Apple", Value = 1.00m, Operation=Operations.Add }
+            },
+            new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Banana", Value = 4.00m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 2,
+                SalesData = new SalesData { ProductType = "Orange", Value = 3.00m },
+                Occurrences = 2
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Orange", Value = 2.00m, Operation = Operations.Multiply }
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Cheese", Value = 2.00m, Operation = Operations.Subtract }
+            },
+            new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Apple", Value = 1.00m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Cheese", Value = 2.00m }
+            },
+            new MessageProcessing
+            {
+                MessageType = 2,
+                SalesData = new SalesData { ProductType = "Orange", Value = 3.00m },
+                Occurrences = 3
+            },
+            new MessageProcessing
+            {
+                MessageType = 3,
+                AdjustmentOperation = new AdjustmentOperation { ProductType = "Apple", Value = 1.00m, Operation=Operations.Add }
+            },
 
+            new MessageProcessing
+            {
+                MessageType = 1,
+                SalesData = new SalesData { ProductType = "Cheese", Value = 2.00m }
+            },
 
 
         };

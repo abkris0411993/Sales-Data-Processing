@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Sales_Data_Processing.Services
@@ -28,8 +29,7 @@ namespace Sales_Data_Processing.Services
 
             Console.WriteLine($"---- Sales Report #{++reportCount}----");
             foreach (var productSale in productSales)
-            {
-                
+            {                
                 Console.WriteLine($"{productSale.Key}: {productSale.Value} units, Total Value: {productSale.Value * _salesrecorder.GetSales().First(s => s.ProductType == productSale.Key).Value}");
             }
         }
@@ -37,14 +37,18 @@ namespace Sales_Data_Processing.Services
         public void GetSalesAdjustmentsReport()
         {
             Console.WriteLine("\nGenerating adjustments report...");
-
-            List<SalesData> sales = _salesrecorder.GetSales();
-
+            List<SalesData> sales = _salesrecorder.GetSales();                                   
             Console.WriteLine($"---- Adjustments Report #{++adjustmentreportCount}---");
+            
             foreach (SalesData sale in sales)
             {
-                Console.WriteLine($"{sale.ProductType}: {sale.Value}");
-            }
+                int pos = sales.IndexOf(sale);
+                if (pos < 50)
+                {
+                    Console.WriteLine($"{sale.ProductType}: {sale.Value}");
+                }
+                            
+            }                      
         }
 
         private Dictionary<string, decimal> GetProductSales()
