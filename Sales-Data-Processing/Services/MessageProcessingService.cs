@@ -1,11 +1,12 @@
 ﻿using Sales_Data_Processing.Helper;
 using Sales_Data_Processing.Services.Contracts;
+using System.Collections.Generic;
 using System.Text.Json;
 
 
 namespace Sales_Data_Processing.Services
 {
-    public class MessageProcessingService:IMessageProcessingService
+    public class MessageProcessingService : IMessageProcessingService
     {
         private readonly ISalesDataService _salesrecorder;
         private readonly ILogGeneratorService _logGenerator;
@@ -32,7 +33,7 @@ namespace Sales_Data_Processing.Services
             }
 
             // Pause the application and generate adjustment reports after 50 messages
-            if (messageCount == 50)
+            if (messageCount % 50 == 0)
             {
                 Console.WriteLine("\nPausing the application...");
                 _logGenerator.GetSalesAdjustmentsReport();
@@ -46,13 +47,19 @@ namespace Sales_Data_Processing.Services
             switch (message.MessageType)
             {
                 case 1:
-                    _salesrecorder.SaleRecord(message.SalesData);
+                    _salesrecorder.AddSaleRecord(message.SalesData);
                     break;
                 case 2:
                     for (int i = 0; i < message.Occurrences; i++)
-                    {
-                        _salesrecorder.SaleRecord(message.SalesData);
-                        
+                    {                        
+                        SalesData sale = new SalesData
+                        {
+                            ProductType = message.SalesData.ProductType,
+                            Value = message.SalesData.Value,
+                            Occurrences = 1  
+                        };
+                        _salesrecorder.AddSaleRecord(sale);
+
                     }
                     break;
                 case 3:
@@ -64,28 +71,28 @@ namespace Sales_Data_Processing.Services
             }
         }
 
-       
         private void ApplyAdjustmentToRecordedSales(AdjustmentOperation adjustment)
         {
             List<SalesData> sales = _salesrecorder.GetSales();
-            foreach (SalesData sale in sales)
-            {
-                if (sale.ProductType == adjustment.ProductType)
+            List<SalesData> recordsales = sales.Where(sale => sale.ProductType == adjustment.ProductType).ToList();
+                       
+                foreach (SalesData sale in recordsales)
                 {
-                    switch (adjustment.Operation)
-                    {
-                        case Operations.Add:
-                            sale.Value += adjustment.Value;
-                            break;
-                        case Operations.Subtract:
-                            sale.Value -= adjustment.Value;
-                            break;
-                        case Operations.Multiply:
-                            sale.Value *= adjustment.Value;
-                            break;
+                                                                                      
+                        switch (adjustment.Operation)
+                        {
+                            case Operations.Add:                                
+                                sale.Value+= adjustment.Value;
+                                break;
+                            case Operations.Subtract:
+                                sale.Value -= adjustment.Value;
+                                break;
+                            case Operations.Multiply:
+                                sale.Value *= adjustment.Value;
+                                break;
+                        }                        
                     }
                 }
             }
         }
-    }
-}
+    

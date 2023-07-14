@@ -13,15 +13,17 @@ namespace Sales_Data_Processing.Services
     {
 
         private List<SalesData> Sales;
-
+        
         public  SalesDataService()
         {
             Sales = new List<SalesData>();
         }
 
-        public void SaleRecord(SalesData SaleData)
+        public void AddSaleRecord(SalesData SaleData)
         {
-            Sales.Add(SaleData);
+           
+            Sales.Add(SaleData);            
+
         }
 
         public List<SalesData> GetSales()
