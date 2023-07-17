@@ -56,7 +56,7 @@ namespace Sales_Data_Processing.Services
                         {
                             ProductType = message.SalesData.ProductType,
                             Value = message.SalesData.Value,
-                            Occurrences = 1  
+                             
                         };
                         _salesrecorder.AddSaleRecord(sale);
 
